@@ -47,7 +47,10 @@ A simple, clean DSL for describing, writing, and parsing fixed-width text files.
   end
   
 Supported types are: string, integer, date, float, money, and money_with_implied_decimal.
-  
+
+A column definition may be passed a block that allows for further formatting or
+normalisation of the read or written value.
+
 Then either feed it a nested struct with data values to create the file in the defined format:
 
   test_data = {

@@ -1,5 +1,5 @@
 require 'rake'
-require 'spec/rake/spectask'
+require 'rspec/core/rake_task'
 
 desc "Run all examples with RCov"
 Spec::Rake::SpecTask.new('rcov') do |t|
@@ -24,7 +24,7 @@ PROJ.name = 'slither'
 PROJ.authors = 'Ryan Wood'
 PROJ.email = 'ryan.wood@gmail.com'
 PROJ.url = 'http://github.com/ryanwood/slither'
-PROJ.version = '0.99.3'
+PROJ.version = '0.99.4'
 PROJ.exclude = %w(\.git .gitignore ^tasks \.eprj ^pkg)
 PROJ.readme_file = 'README.rdoc'
 
