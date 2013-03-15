@@ -13,11 +13,11 @@ class Slither
       @optional = options[:optional] || false
     end
     
-    def column(name, length, options = {})
+    def column(name, length, options = {}, &block)
       raise(Slither::DuplicateColumnNameError, "You have already defined a column named '#{name}'.") if @columns.map do |c|
         RESERVED_NAMES.include?(c.name) ? nil : c.name
       end.flatten.include?(name)
-      col = Column.new(name, length, @options.merge(options))
+      col = Column.new(name, length, @options.merge(options), &block)
       @columns << col
       col
     end
